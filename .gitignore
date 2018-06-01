@@ -1,0 +1,16 @@
+node_modules
+
+.idea
+
+db.sqlite3
+
+# Mac
+.DS_Store
+._*
+
+# Yarn
+yarn.lock
+
+# For Boiler-plate
+#**/migrations/*
+#!**/migrations/__init__.py

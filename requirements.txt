@@ -1,0 +1,5 @@
+-r reqs/dev.txt
+
+gunicorn==19.8.1
+psycopg2==2.7.4
+static3==0.7.0
