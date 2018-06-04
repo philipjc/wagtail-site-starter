@@ -26,6 +26,8 @@ const commonConfig = merge([
     ],
   },
 
+  parts.loadJS({ include: path.resolve('./website/static/js/')}),
+
   parts.loadCSS(),
 
 ]);
