@@ -5,7 +5,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['anth-site.herokuapp.com']
+ALLOWED_HOSTS = ['web-site-starter.herokuapp.com']
 
 # STORAGE CONFIGURATION
 # ------------------------------------------------------------------------------
