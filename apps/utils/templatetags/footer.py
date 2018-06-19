@@ -8,5 +8,5 @@ register = template.Library()
 def footer():
 
     return {
-        
+
     }
