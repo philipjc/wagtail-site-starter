@@ -9,7 +9,7 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
-from search import views as search_views
+# from search import views as search_views
 
 urlpatterns = [
     url(r'^django-admin/', admin.site.urls),
@@ -20,10 +20,10 @@ urlpatterns = [
 
     url(r'^documents/', include(wagtaildocs_urls)),
 
-    url(r'^search/$', search_views.search, name='search'),
+    # url(r'^search/$', search_views.search, name='search'),
 
 
-    path('users/', include('users.urls')),
+    path('users/', include('apps.users.urls')),
 
     path('users/', include('django.contrib.auth.urls')),
 
