@@ -7,7 +7,7 @@ const parts = require("./webpack.parts");
 const commonConfig = merge([
 
   {
-    entry: ['./website/static/js/index.js', './website/static/css/main.scss'],
+    entry: ['./assets/js/index.js', './assets/css/main.scss'],
   },
 
   {
@@ -26,7 +26,7 @@ const commonConfig = merge([
     ],
   },
 
-  parts.loadJS({ include: path.resolve('./website/static/js/')}),
+  parts.loadJS({ include: path.resolve('./assets/js/')}),
 
   parts.loadCSS(),
 
