@@ -28,6 +28,8 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'home',
     'search',
+    'utils',
+    'users',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -167,3 +169,26 @@ WAGTAIL_SITE_NAME = "website"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+
+# ================================================
+# Auth
+# ================================================
+AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# ================================================
+# SendGrid
+# ================================================
+
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = config('SENDGRID_EMAIL_HOST')
+# EMAIL_HOST_PASSWORD = config('SENDGRID_PASSWORD')
+# EMAIL_USE_TLS = True
+
+# ================================================
+# Other Variables
+# ================================================
+# CLIENT_EMAIL = 'philipcox83@gmail.com'

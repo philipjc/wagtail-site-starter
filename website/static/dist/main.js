@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./assets/css/main.scss?");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -105,7 +105,34 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./as
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils_Router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/Router */ \"./assets/js/utils/Router.js\");\n/* harmony import */ var _routes_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes/common */ \"./assets/js/routes/common.js\");\n// import external dependencies\n// import 'popper.js'\n// import 'imports-loader?jQuery=jquery!bootstrap'\n\n// import local dependencies\n\n\n\n\n/** Populate Router instance with DOM routes */\nconst routes = new _utils_Router__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n  // All pages\n  common: _routes_common__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n\n});\n\n// Load Events\n// jQuery(document).ready(() => routes.loadEvents());\n/** Load Events */\ndocument.addEventListener(\"DOMContentLoaded\", function(){\n  // Handler when the DOM is fully loaded\n  routes.loadEvents()\n});\n\n\n\n//# sourceURL=webpack:///./assets/js/index.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_Router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/Router */ "./assets/js/utils/Router.js");
+/* harmony import */ var _routes_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes/common */ "./assets/js/routes/common.js");
+// import external dependencies
+// import 'popper.js'
+// import 'imports-loader?jQuery=jquery!bootstrap'
+
+// import local dependencies
+
+
+
+
+/** Populate Router instance with DOM routes */
+const routes = new _utils_Router__WEBPACK_IMPORTED_MODULE_0__["default"]({
+  // All pages
+  common: _routes_common__WEBPACK_IMPORTED_MODULE_1__["default"],
+
+});
+
+// Load Events
+// jQuery(document).ready(() => routes.loadEvents());
+/** Load Events */
+document.addEventListener("DOMContentLoaded", function(){
+  // Handler when the DOM is fully loaded
+  routes.loadEvents()
+});
+
+
 
 /***/ }),
 
@@ -117,7 +144,20 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _uti
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n\nclass Common {\n  constructor() {\n\n  }\n\n  init() {\n    console.log('common init');\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (new Common());\n\n\n//# sourceURL=webpack:///./assets/js/routes/common.js?");
+__webpack_require__.r(__webpack_exports__);
+
+class Common {
+  constructor() {
+
+  }
+
+  init() {
+    console.log('common init');
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (new Common());
+
 
 /***/ }),
 
@@ -129,7 +169,72 @@ eval("__webpack_require__.r(__webpack_exports__);\n\nclass Common {\n  construct
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _camelCase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./camelCase */ \"./assets/js/utils/camelCase.js\");\n\n\n/**\n * DOM-based Routing\n *\n * Based on {@link http://goo.gl/EUTi53|Markup-based Unobtrusive Comprehensive DOM-ready Execution} by Paul Irish\n *\n * The routing fires all common scripts, followed by the page specific scripts.\n * Add additional events for more control over timing e.g. a finalize event\n */\nclass Router {\n\n  /**\n   * Create a new Router\n   * @param {Object} routes\n   */\n  constructor(routes) {\n    this.routes = routes;\n  }\n\n  /**\n   * Fire Router events\n   * @param {string} route DOM-based route derived from body classes (`<body class=\"...\">`)\n   * @param {string} [event] Events on the route. By default, `init` and `finalize` events are called.\n   * @param {string} [arg] Any custom argument to be passed to the event.\n   */\n  fire(route, event = 'init', arg) {\n    const fire = route !== '' && this.routes[route] && typeof this.routes[route][event] === 'function';\n    if (fire) {\n      this.routes[route][event](arg);\n    }\n  }\n\n  /**\n   * Automatically load and fire Router events\n   *\n   * Events are fired in the following order:\n   *  * common init\n   *  * page-specific init\n   *  * page-specific finalize\n   *  * common finalize\n   */\n  loadEvents() {\n    // Fire common init JS\n    this.fire('common');\n\n    // Fire page-specific init JS, and then finalize JS\n    document.body.className\n      .toLowerCase()\n      .replace(/-/g, '_')\n      .split(/\\s+/)\n      .map(_camelCase__WEBPACK_IMPORTED_MODULE_0__[\"default\"])\n      .forEach((className) => {\n        this.fire(className);\n        this.fire(className, 'finalize');\n      });\n\n    // Fire common finalize JS\n    this.fire('common', 'finalize');\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Router);\n\n\n//# sourceURL=webpack:///./assets/js/utils/Router.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _camelCase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./camelCase */ "./assets/js/utils/camelCase.js");
+
+
+/**
+ * DOM-based Routing
+ *
+ * Based on {@link http://goo.gl/EUTi53|Markup-based Unobtrusive Comprehensive DOM-ready Execution} by Paul Irish
+ *
+ * The routing fires all common scripts, followed by the page specific scripts.
+ * Add additional events for more control over timing e.g. a finalize event
+ */
+class Router {
+
+  /**
+   * Create a new Router
+   * @param {Object} routes
+   */
+  constructor(routes) {
+    this.routes = routes;
+  }
+
+  /**
+   * Fire Router events
+   * @param {string} route DOM-based route derived from body classes (`<body class="...">`)
+   * @param {string} [event] Events on the route. By default, `init` and `finalize` events are called.
+   * @param {string} [arg] Any custom argument to be passed to the event.
+   */
+  fire(route, event = 'init', arg) {
+    const fire = route !== '' && this.routes[route] && typeof this.routes[route][event] === 'function';
+    if (fire) {
+      this.routes[route][event](arg);
+    }
+  }
+
+  /**
+   * Automatically load and fire Router events
+   *
+   * Events are fired in the following order:
+   *  * common init
+   *  * page-specific init
+   *  * page-specific finalize
+   *  * common finalize
+   */
+  loadEvents() {
+    // Fire common init JS
+    this.fire('common');
+
+    // Fire page-specific init JS, and then finalize JS
+    document.body.className
+      .toLowerCase()
+      .replace(/-/g, '_')
+      .split(/\s+/)
+      .map(_camelCase__WEBPACK_IMPORTED_MODULE_0__["default"])
+      .forEach((className) => {
+        this.fire(className);
+        this.fire(className, 'finalize');
+      });
+
+    // Fire common finalize JS
+    this.fire('common', 'finalize');
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Router);
+
 
 /***/ }),
 
@@ -141,7 +246,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _cam
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/**\n * the most terrible camelizer on the internet, guaranteed!\n * @param {string} str String that isn't camel-case, e.g., CAMeL_CaSEiS-harD\n * @return {string} String converted to camel-case, e.g., camelCaseIsHard\n */\n/* harmony default export */ __webpack_exports__[\"default\"] = (str => `${str.charAt(0).toLowerCase()}${str.replace(/[\\W_]/g, '|').split('|')\n  .map(part => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)\n  .join('')\n  .slice(1)}`);\n\n\n//# sourceURL=webpack:///./assets/js/utils/camelCase.js?");
+__webpack_require__.r(__webpack_exports__);
+/**
+ * the most terrible camelizer on the internet, guaranteed!
+ * @param {string} str String that isn't camel-case, e.g., CAMeL_CaSEiS-harD
+ * @return {string} String converted to camel-case, e.g., camelCaseIsHard
+ */
+/* harmony default export */ __webpack_exports__["default"] = (str => `${str.charAt(0).toLowerCase()}${str.replace(/[\W_]/g, '|').split('|')
+  .map(part => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
+  .join('')
+  .slice(1)}`);
+
 
 /***/ }),
 
@@ -152,8 +267,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/**\n * the most terrible cam
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./assets/js/index.js */\"./assets/js/index.js\");\nmodule.exports = __webpack_require__(/*! ./assets/css/main.scss */\"./assets/css/main.scss\");\n\n\n//# sourceURL=webpack:///multi_./assets/js/index.js_./assets/css/main.scss?");
+__webpack_require__(/*! ./assets/js/index.js */"./assets/js/index.js");
+module.exports = __webpack_require__(/*! ./assets/css/main.scss */"./assets/css/main.scss");
+
 
 /***/ })
 
 /******/ });
+//# sourceMappingURL=main.js.map

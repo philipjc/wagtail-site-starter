@@ -1,6 +1,12 @@
 const path = require("path");
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyWebpackPlugin = require("uglifyjs-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require(
+  "optimize-css-assets-webpack-plugin"
+);
+
+const cssnano = require("cssnano");
 
 exports.devServer = ({ host, port } = {}) => ({
 
@@ -54,4 +60,38 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
       },
     ]
   },
+});
+
+
+// SourceMaps
+exports.generateSourceMaps = ({ type }) => ({
+  devtool: type,
+});
+
+// Minify JS
+exports.minifyJavaScript = () => ({
+  optimization: {
+    minimizer: [
+      new UglifyWebpackPlugin(
+        {
+          sourceMap: true,
+          uglifyOptions: {
+            compress: {
+              drop_console: true
+            },
+          }
+        })
+    ],
+  },
+});
+
+// Minify CSS
+exports.minifyCSS = ({ options }) => ({
+  plugins: [
+    new OptimizeCSSAssetsPlugin({
+      cssProcessor: cssnano,
+      cssProcessorOptions: options,
+      canPrint: false,
+    }),
+  ],
 });

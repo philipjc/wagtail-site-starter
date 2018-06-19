@@ -32,14 +32,33 @@ const commonConfig = merge([
 
 ]);
 
-const productionConfig = merge([]);
+const productionConfig = merge([
+
+  parts.minifyJavaScript(),
+
+  parts.minifyCSS({
+    options: {
+      discardComments: {
+        removeAll: true,
+      },
+      // Run cssnano in safe mode to avoid
+      // potentially unsafe transformations.
+      safe: true,
+    },
+  }),
+
+]);
 
 const developmentConfig = merge([
+
   parts.devServer({
     // Customize host/port here if needed
     // host: process.env.HOST,
     // port: process.env.PORT,
   }),
+
+    parts.generateSourceMaps({ type: 'source-map' }),
+
 ]);
 
 module.exports = mode => {
