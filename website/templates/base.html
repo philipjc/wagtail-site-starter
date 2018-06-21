@@ -18,6 +18,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'dist/css/main.css' %}">
 
         {% block extra_css %}
@@ -28,7 +29,8 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'dist/main.js' %}"></script>

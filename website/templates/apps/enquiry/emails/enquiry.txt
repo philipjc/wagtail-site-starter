@@ -1,0 +1,6 @@
+
+    New Enquiry
+
+    {{ email }}
+
+    Please act accordinly

@@ -1,0 +1,16 @@
+$font-size: 14px;
+$font-family: 'Roboto', sans-serif;
+
+// Colors
+$primary-color: tomato;
+$secondary-color: #bada55;
+
+$light-primary: lighten($primary-color, 15%);
+$dark-primary: darken($primary-color, 15%);
+
+$light-secondary: lighten($secondary-color, 15%);
+$dark-secondary: darken($secondary-color, 15%);
+
+// Spacing
+$main-margin: 20px;
+$main-padding: 40px;

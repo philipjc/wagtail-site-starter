@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body_class %}users{% endblock %}
+
+
+{% block content %}
+
+  <div class="page-content">
+
+    <h2>Your Profile</h2>
+
+    <h3>{{ user.username }}</h3>
+
+    {% if user.profile.bio %}
+
+      <p>{{ user.profile.bio }}</p>
+
+      {% else %}
+        <p>Currently no bio, add one?</p>
+
+    {% endif %}
+
+
+    {% if user.profile.location %}
+
+      <p>{{ user.profile.location }}</p>
+
+      {% else %}
+        <p>Currently no location, add one?</p>
+
+    {% endif %}
+
+
+    {% if user.profile.birth_date %}
+
+      <p>{{ user.profile.birth_date }}</p>
+
+      {% else %}
+        <p>Currently no birth_date, add one?</p>
+
+    {% endif %}
+
+    <p><a href="/users/{{ user.id }}/profile/edit">Edit Profile</a></p>
+
+    <p><a href="/">Home</a></p>
+
+  </div>
+
+{% endblock %}

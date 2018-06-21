@@ -26,10 +26,11 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
-    'apps.home',
+    'apps.general',
     'apps.search',
     'apps.utils',
     'apps.users',
+    'apps.enquiry',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -175,6 +176,7 @@ BASE_URL = 'http://example.com'
 # Auth
 # ================================================
 AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_PROFILE_MODULE = 'users.Profile'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -183,13 +185,13 @@ LOGOUT_REDIRECT_URL = '/'
 # SendGrid
 # ================================================
 
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = config('SENDGRID_EMAIL_HOST')
-# EMAIL_HOST_PASSWORD = config('SENDGRID_PASSWORD')
-# EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = config('SENDGRID_EMAIL_HOST')
+EMAIL_HOST_PASSWORD = config('SENDGRID_PASSWORD')
+EMAIL_USE_TLS = True
 
 # ================================================
 # Other Variables
 # ================================================
-# CLIENT_EMAIL = 'philipcox83@gmail.com'
+CLIENT_EMAIL = 'philipcox83@gmail.com'

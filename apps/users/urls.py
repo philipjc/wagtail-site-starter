@@ -18,4 +18,8 @@ urlpatterns = [
 
     # url(r'^login', views.LogIn.as_view(), name='login'),
 
+    url(r'^(?P<pk>\d+)/profile/view', views.ViewProfile.as_view(), name='profile_view'),
+
+    url(r'^(?P<pk>\d+)/profile/edit', views.UpdateProfile.as_view(), name='profile_edit')
+
 ]

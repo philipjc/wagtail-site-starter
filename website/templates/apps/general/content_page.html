@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body_class %}content{% endblock %}
+
+{% block content %}
+
+  <h1>Content Page</h1>
+
+  {% if self.body %}
+
+    {% include "streamfield/general.html" with content=self.body %}
+
+  {% endif %}
+
+{% endblock %}

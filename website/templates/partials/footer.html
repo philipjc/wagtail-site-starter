@@ -1,0 +1,37 @@
+<div class="fix-bottom">
+
+  {% include 'partials/enquiry.html' %}
+
+  <footer class="footer" id="contact">
+
+    <div class="lessons column">
+      <h3>Latest Yoga Lessons</h3>
+
+      {% for l in latest_lessons %}
+        <a href="{{ l.url }}">{{ l }}</a>
+      {% endfor %}
+    </div>
+
+    <div class="treatments column">
+      <h3>Latest Health Treatments</h3>
+
+      {% for t in latest_treatments %}
+        <a href="{{ t.url }}">{{ t }}</a>
+      {% endfor %}
+    </div>
+
+    <div class="contact column">
+      <h3>Contact</h3>
+
+      <p><a href="tel:07895995563">Tel: 07895 995563</a></p>
+
+      <p><a href="mailto:anthearandell@hotmail.co.uk">Email: anthearandell@hotmail.co.uk</a></p>
+
+      <p class="facebook"><a href="https://www.facebook.com/anthea.randell.3?ref=br_rs"><i
+              class="fab fa-facebook-square"></i></a></p>
+
+    </div>
+
+  </footer>
+
+</div>

@@ -1,0 +1,52 @@
+<script async="false">
+
+    window.initMap = function () {
+
+        let myLatLng = {lat: {{ lat }}, lng: {{ lon }}};
+
+        let myCenter = myLatLng;
+
+        if (window.innerWidth > 500) {
+          myCenter = {lat: {{ lat }}+0.001, lng: {{ lon }}-0.003 };
+        }
+        {#else let myCenter = myLatLng;#}
+
+        let map = new google.maps.Map(document.getElementById('google-map'), {
+            zoom: 14,
+            center: myCenter,
+            zoomControl: false,
+            zoomControlOptions: {
+                style: google.maps.ZoomControlStyle.SMALL
+            },
+            disableDoubleClickZoom: true,
+            mapTypeControl: false,
+            scaleControl: false,
+            scrollwheel: true,
+            panControl: true,
+            streetViewControl: false,
+            fullscreenControl: false,
+            draggable: true,
+            overviewMapControl: true,
+            overviewMapControlOptions: {
+                opened: false
+            }
+        });
+
+        let marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            {#icon: '{{ STATIC_URL }}img/map-pin.png'#}
+        });
+
+        setTimeout(function() {
+
+          console.log('Timeout?');
+
+          google.maps.event.trigger(map, "resize");
+          map.setCenter(myCenter);
+
+        }, 2000);
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_4fXuQBbkudF5A0JgVfLv1cBwzxh57Hw&callback=initMap"></script>

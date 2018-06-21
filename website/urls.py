@@ -20,8 +20,11 @@ urlpatterns = [
 
     url(r'^documents/', include(wagtaildocs_urls)),
 
+    url(r'^', include('apps.general.urls'), name='general'),
+
     # url(r'^search/$', search_views.search, name='search'),
 
+    url(r'^enquiry/', include('apps.enquiry.urls'), name='enquiry'),
 
     path('users/', include('apps.users.urls')),
 

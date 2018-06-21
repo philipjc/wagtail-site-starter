@@ -1,3 +1,17 @@
+@import "resets";
+@import "variables";
+
 body {
+  font-family: $font-family;
   background: tomato;
+  box-sizing: border-box;
+
 }
+
+
+@import "streamfields/callout";
+@import "streamfields/content";
+@import "streamfields/quote";
+@import "streamfields/three_columns";
+@import "streamfields/two_columns";
+@import "streamfields/video";

@@ -1,0 +1,41 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="sf sf-general">
+
+    {% for child in content %}
+
+        {% if child.block_type == 'content' %}
+
+            {% include "streamfield/blocks/content.html" with block=child.value %}
+
+        {% elif child.block_type == 'two_columns' %}
+
+            {% include "streamfield/blocks/two_columns.html" with block=child.value %}
+
+        {% elif child.block_type == 'three_columns' %}
+
+            {% include "streamfield/blocks/three_columns.html" with block=child.value %}
+
+        {% elif child.block_type == 'quote' %}
+
+            {% include "streamfield/blocks/quote.html" with block=child.value %}
+
+        {% elif child.block_type == 'video' %}
+
+            {% include "streamfield/blocks/video.html" with block=child.value %}
+
+
+        {% elif child.block_type == 'callout' %}
+
+            {% include "streamfield/blocks/callout.html" with block=child.value %}
+
+
+        {% else %}
+
+            {{ child.value|richtext }}
+
+        {% endif %}
+
+    {% endfor %}
+
+</div>
