@@ -14,3 +14,6 @@ $dark-secondary: darken($secondary-color, 15%);
 // Spacing
 $main-margin: 20px;
 $main-padding: 40px;
+
+$small-margin: calc(#{$main-margin} / 2);
+$small-padding: calc(#{$main-padding} / 2);

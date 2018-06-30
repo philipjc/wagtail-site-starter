@@ -8,6 +8,9 @@ from .forms import CustomUserCreationForm, UpdateProfileForm
 from .models import CustomUser, Profile
 
 
+# ========================================
+#
+# ========================================
 class SignUp(generic.CreateView):
 
     form_class = CustomUserCreationForm
@@ -15,6 +18,9 @@ class SignUp(generic.CreateView):
     template_name = 'signup.html'
 
 
+# ========================================
+#
+# ========================================
 class LogIn(generic.CreateView):
 
     form_class = CustomUserCreationForm
@@ -22,12 +28,18 @@ class LogIn(generic.CreateView):
     template_name = 'login.html'
 
 
+# ========================================
+#
+# ========================================
 class ViewProfile(generic.TemplateView):
 
     model = Profile
     template_name = 'profile.html'
 
 
+# ========================================
+#
+# ========================================
 class UpdateProfile(generic.FormView):
 
     model = Profile

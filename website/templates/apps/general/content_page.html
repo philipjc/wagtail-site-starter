@@ -4,12 +4,16 @@
 
 {% block content %}
 
-  <h1>Content Page</h1>
+  <div class="container">
 
-  {% if self.body %}
+    <h1>Content Page</h1>
 
-    {% include "streamfield/general.html" with content=self.body %}
+    {% if self.body %}
 
-  {% endif %}
+      {% include "streamfield/general.html" with content=self.body %}
+
+    {% endif %}
+
+  </div>
 
 {% endblock %}

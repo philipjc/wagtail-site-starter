@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  padding: $small-padding;
+}
+
+.full-width-header {
+  position: relative;
+  width: 100%;
+
+  img {
+    width: 100%;
+    //background-size: contain;
+    object-fit: cover;
+  }
+
+  &__title {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+// Elements
+.container {
+  padding: $main-padding;
+}
+
+section {
+  display: flex;
+  padding: $small-padding;
+}
+
+// Helpers
+.stacked {
+  flex-direction: column;
+}
+
+.centered {
+  align-items: center;
+  justify-content: center;
+}
+
+// Streams
+.stream-block {
+  padding: $small-padding;
+}
+

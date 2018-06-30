@@ -1,19 +1,19 @@
 {% load wagtailcore_tags %}
 
-<section class="sf-block sf-three-columns">
+<section class="stream-block stream-three-columns">
 
     {% if block.title %}
         <h2>{{ block.title }}</h2>
     {% endif %}
 
-    <div class="row">
-        <div class="col-md-4">
+    <div class="page-row">
+        <div class="">
             {{ block.left_column|richtext }}
         </div>
-        <div class="col-md-4">
+        <div class="">
             {{ block.middle_column|richtext }}
         </div>
-        <div class="col-md-4">
+        <div class="">
             {{ block.right_column|richtext }}
         </div>
     </div>

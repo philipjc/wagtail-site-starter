@@ -4,21 +4,23 @@
 
 {% block content %}
 
-  <h1>Site</h1>
+  <div class="container">
 
-  <a href="/users">Login</a>
+    <a href="/users">Login</a>
 
-  {% if user.id %}
+    {% if user.id %}
 
-    <a href="/users/{{ user.id }}/profile/view">My Profile</a>
+      <a href="/users/{{ user.id }}/profile/view">My Profile</a>
 
-  {% endif %}
+    {% endif %}
 
 
-  {% if self.body %}
+    {% if self.body %}
 
-    {% include "streamfield/general.html" with content=self.body %}
+      {% include "streamfield/general.html" with content=self.body %}
 
-  {% endif %}
+    {% endif %}
+
+  </div>
 
 {% endblock %}

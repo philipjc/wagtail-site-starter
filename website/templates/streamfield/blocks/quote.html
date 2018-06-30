@@ -1,12 +1,18 @@
 {% load wagtailcore_tags %}
 
-<div class="sf-block sf-quote">
+<div class="stream-block stream-quote">
+
     <blockquote class="blockquote">
+
         <p class="quote-text">{{ block.quote_text }}</p>
+
         {% if block.name or block.job_title or block.company_name %}
+
             <p class="quote-name">{% if block.name %}<strong>{{ block.name }}</strong>{% endif %}
+
                 {% if block.job_title %} {{ block.job_title }}{% endif %}{% if block.company_name %},
                     {{ block.company_name }}{% endif %}</p>
         {% endif %}
+
     </blockquote>
 </div>

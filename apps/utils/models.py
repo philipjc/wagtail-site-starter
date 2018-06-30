@@ -5,6 +5,9 @@ from wagtail.core.models import Page
 from wagtail.core.blocks import ListBlock, ChoiceBlock, TextBlock, StructBlock, StreamBlock, CharBlock, \
     RichTextBlock, BooleanBlock, URLBlock, PageChooserBlock
 
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel, StreamFieldPanel
+from wagtail.images.edit_handlers import ImageChooserPanel
+
 
 # Create your models here.
 class BasePage(Page):
@@ -19,6 +22,15 @@ class BasePage(Page):
         related_name='+',
         verbose_name='Page Header image'
     )
+
+    HEADER_PANELS = (
+        FieldPanel('page_title'),
+        ImageChooserPanel('page_header_image'),
+    )
+
+    content_panels = Page.content_panels + [
+        MultiFieldPanel(HEADER_PANELS, "Page Header"),
+    ]
 
     class Meta:
         abstract = True

@@ -7,15 +7,21 @@
 
 {% block content %}
 
-  <div class="page-content">
+  <div class="container">
 
-    <h2>Edit your Profile</h2>
+    <header>
+      <h2>Edit your Profile</h2>
+    </header>
 
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Update</button>
-    </form>
+    <section>
+
+      <form method="post" class="d-generated-form stacked">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+      </form>
+
+    </section>
 
   </div>
 

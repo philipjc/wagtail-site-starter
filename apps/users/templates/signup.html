@@ -7,15 +7,21 @@
 
 {% block content %}
 
-  <div class="page-content">
+  <div class="container">
 
-    <h2>Sign up</h2>
+    <header>
+      <h2>Sign up</h2>
+    </header>
 
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Sign up</button>
-    </form>
+    <section>
+
+      <form method="post" class="d-generated-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign up</button>
+      </form>
+
+    </section>
 
   </div>
 

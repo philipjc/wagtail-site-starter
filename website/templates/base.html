@@ -1,4 +1,4 @@
-{% load static wagtailuserbar %}
+{% load static wagtailuserbar wagtailimages_tags %}
 
 <!DOCTYPE html>
 <html class="no-js">
@@ -27,7 +27,35 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
+
         {% wagtailuserbar %}
+
+        {% block header %}
+
+          {% if page.page_header_image %}
+            {% image page.page_header_image original as img %}
+          {% endif %}
+
+          {% if page.page_header_image or page.page_title %}
+
+  {#          <header class="header" style="background-image: url({{ img.url }})">#}
+            <header class="{% if page.page_header_image %}full-width-header{% else %}header{% endif %}">
+
+              {% if page.page_header_image %}
+                <img src="{{ img.url }}" alt="">
+              {% endif %}
+
+              {% if page.page_title %}
+                <div class="{% if page.page_header_image %}full-width-header__title{% else %}header__title{% endif %}">
+                  <h1>{{ page.page_title }}</h1>
+                </div>
+              {% endif %}
+
+            </header>
+
+          {% endif %}
+
+        {% endblock %}
 
         {% block content %}
         {% endblock %}

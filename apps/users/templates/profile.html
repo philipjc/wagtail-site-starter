@@ -7,44 +7,50 @@
 
 {% block content %}
 
-  <div class="page-content">
+  <div class="container profile-page">
 
-    <h2>Your Profile</h2>
+    <header class="stacked">
+      <h2>Your Profile</h2>
 
-    <h3>{{ user.username }}</h3>
+      <h3>{{ user.username }}</h3>
+    </header>
 
-    {% if user.profile.bio %}
+    <section class="profile-page__info stacked">
 
-      <p>{{ user.profile.bio }}</p>
+      {% if user.profile.bio %}
+
+        <p>{{ user.profile.bio }}</p>
 
       {% else %}
         <p>Currently no bio, add one?</p>
 
-    {% endif %}
+      {% endif %}
 
 
-    {% if user.profile.location %}
+      {% if user.profile.location %}
 
-      <p>{{ user.profile.location }}</p>
+        <p>{{ user.profile.location }}</p>
 
       {% else %}
         <p>Currently no location, add one?</p>
 
-    {% endif %}
+      {% endif %}
 
 
-    {% if user.profile.birth_date %}
+      {% if user.profile.birth_date %}
 
-      <p>{{ user.profile.birth_date }}</p>
+        <p>{{ user.profile.birth_date }}</p>
 
       {% else %}
         <p>Currently no birth_date, add one?</p>
 
-    {% endif %}
+      {% endif %}
 
-    <p><a href="/users/{{ user.id }}/profile/edit">Edit Profile</a></p>
+      <p><a href="/users/{{ user.id }}/profile/edit">Edit Profile</a></p>
 
-    <p><a href="/">Home</a></p>
+      <p><a href="/">Home</a></p>
+
+    </section>
 
   </div>
 

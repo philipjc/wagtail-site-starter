@@ -8,22 +8,30 @@
 
 {% block content %}
 
-  <div class="page-content">
+  <div class="container">
 
-    <h1>Login Page</h1>
+    <header>
+      <h1>Login Page</h1>
+    </header>
 
-    {% if user.is_authenticated %}
+    <section class="stacked">
 
-      Hi {{ user.username }}!
-      <p><a href="{% url 'logout' %}">logout</a></p>
+      {% if user.is_authenticated %}
 
-    {% else %}
+        <p>Hello, {{ user.username }}!</p>
 
-      <p>You are not logged in</p>
-      <a href="{% url 'login' %}">login</a> |
-      <a href="{% url 'signup' %}">signup</a>
+        <p><a href="{{ user.id }}/profile/view">Profile</a></p>
+        <p><a href="{% url 'logout' %}">logout</a></p>
 
-    {% endif %}
+      {% else %}
+
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">login</a>
+        <a href="{% url 'signup' %}">signup</a>
+
+      {% endif %}
+
+    </section>
 
   </div>
 

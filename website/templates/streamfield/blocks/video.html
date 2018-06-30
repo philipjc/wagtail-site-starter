@@ -1,8 +1,11 @@
 {% load wagtailcore_tags %}
 
-<div class="sf-block sf-video">
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="{{ block.url }}" width="560" height="315"
+<div class="stream-block stream-video">
+
+  <div class="stream-video__container">
+
+    <iframe class="stream-video__container__frame" src="{{ block.url }}" width="560" height="315"
             frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
+
 </div>

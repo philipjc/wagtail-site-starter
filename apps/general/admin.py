@@ -15,13 +15,3 @@ from .models import HomePage
 HomePage.content_panels = HomePage.content_panels + [
     StreamFieldPanel('body'),
 ]
-
-
-HEADER_PANELS = (
-    FieldPanel('page_title'),
-    ImageChooserPanel('page_header_image'),
-)
-
-content_panels = Page.content_panels + [
-    MultiFieldPanel(HEADER_PANELS, 'Page Header'),
-]
