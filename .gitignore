@@ -14,3 +14,5 @@ yarn.lock
 # For Boiler-plate
 #**/migrations/*
 #!**/migrations/__init__.py
+
+.env
