@@ -16,4 +16,4 @@ yarn.lock
 #!**/migrations/__init__.py
 
 # Comment out before pushing to Github
-#.env
+.env
