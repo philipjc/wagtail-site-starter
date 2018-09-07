@@ -70,4 +70,12 @@
     }
   }
 
+  &__tag-list {
+    display: flex;
+
+    &__item {
+      border-bottom: 2px solid #bada55;
+    }
+  }
+
 }

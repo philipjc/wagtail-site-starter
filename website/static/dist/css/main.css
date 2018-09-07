@@ -179,6 +179,10 @@ h6 {
       cursor: pointer;
       text-align: center;
       min-width: 160px; }
+  .blog-content__tag-list {
+    display: flex; }
+    .blog-content__tag-list__item {
+      border-bottom: 2px solid #bada55; }
 
 nav.menu {
   display: flex;

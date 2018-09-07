@@ -4,22 +4,30 @@
 {% block content %}
 
   {% if request.GET.tag|length %}
-    <h4>Showing pages tagged "{{ request.GET.tag }}"</h4>
+    <div class="page-heading-text">
+      <h4>Showing pages tagged "{{ request.GET.tag }}"</h4>
+    </div>
   {% endif %}
 
-  {% for blogpage in blogpages %}
+  <div class="blog-content">
 
-    <p>
-      <strong><a href="{% pageurl blogpage %}">{{ blogpage.title }}</a></strong><br/>
-      <small>Revised: {{ blogpage.latest_revision_created_at }}</small>
-      <br/>
-      {% if blogpage.author %}
-        <p>By {{ blogpage.author.profile }}</p>
-      {% endif %}
-    </p>
+    <div class="blog-content__tag-list stacked">
+      {% for blogpage in blogpages %}
 
-  {% empty %}
-    No pages found with that tag.
-  {% endfor %}
+        <p class="blog-content__tag-list__item">
+          <strong><a href="{% pageurl blogpage %}">{{ blogpage.title }}</a></strong><br/>
+          <small>Revised: {{ blogpage.latest_revision_created_at }}</small>
+          <br/>
+          {% if blogpage.author %}
+            <p>By {{ blogpage.author.profile }}</p>
+          {% endif %}
+        </p>
+
+      {% empty %}
+        No pages found with that tag.
+      {% endfor %}
+    </div>
+
+  </div>
 
 {% endblock %}
