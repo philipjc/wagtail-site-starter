@@ -152,6 +152,33 @@ h6 {
         padding: calc(40px / 2); }
         .blog-content__list__item .blog-body * {
           margin-bottom: 10px; }
+  .blog-content__categories {
+    display: flex;
+    padding: calc(40px / 2) 0; }
+    .blog-content__categories ul {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      margin-left: 10px; }
+  .blog-content__body {
+    padding: calc(40px / 2) 0; }
+  .blog-content__images {
+    padding: calc(40px / 2) 0;
+    display: flex;
+    justify-content: space-between; }
+  .blog-content__tags {
+    padding: calc(40px / 2) 0; }
+    .blog-content__tags a {
+      display: flex;
+      background-color: #bada55;
+      text-decoration: none;
+      width: 160px;
+      padding: 10px;
+      margin: 5px;
+      font-size: 20px;
+      cursor: pointer;
+      text-align: center;
+      min-width: 160px; }
 
 nav.menu {
   display: flex;

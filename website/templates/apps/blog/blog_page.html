@@ -6,16 +6,22 @@
 
 {% block content %}
 
-  <div class="stacked">
-
+  <div class="page-heading-text">
     <h1>{{ page.title }}</h1>
+  </div>
 
+  <div class="page-intro">{{ page.intro }}</div>
+
+  <div class="page-info">
     <p class="meta">{{ page.date }}</p>
+  </div>
 
-    <div>
+  <div class="blog-content">
+
+    <div class="blog-content__categories">
       {% with categories=page.categories.all %}
         {% if categories %}
-          <h3>Posted in:</h3>
+          <h4>Posted in:</h4>
           <ul>
             {% for category in categories %}
               <li style="display: inline">
@@ -28,16 +34,14 @@
       {% endwith %}
     </div>
 
-    <div class="intro">{{ page.intro }}</div>
-
-    <div>
+    <div class="blog-content__body">
       {{ page.body|richtext }}
     </div>
 
-    <div>
+    <div class="blog-content__images">
       {% for item in page.gallery_images.all %}
 
-        <div style="float: left; margin: 10px">
+        <div>
           {% image item.image fill-320x240 %}
           <p>{{ item.caption }}</p>
         </div>
@@ -45,22 +49,19 @@
       {% endfor %}
     </div>
 
-    <div>
+    <div class="blog-content__tags">
       {% if page.tags.all.count %}
-        <div class="tags">
-          <h3>Tags</h3>
-          {% for tag in page.tags.all %}
-            <a href="{% slugurl 'tags' %}?tag={{ tag }}">
-              <button type="button">{{ tag }}</button>
-            </a>
-          {% endfor %}
-        </div>
+        <h4>Tags</h4>
+        {% for tag in page.tags.all %}
+          <a href="{% slugurl 'tags' %}?tag={{ tag }}">{{ tag }}</a>
+        {% endfor %}
       {% endif %}
     </div>
 
-    <div>
-      <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
-    </div>
+  </div>
+
+  <div>
+    <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
   </div>
 
 {% endblock %}
