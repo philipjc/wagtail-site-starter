@@ -32,7 +32,11 @@ class BlogCategory(models.Model):
 
 # Index Page
 class BlogIndexPage(Page):
-    intro = RichTextField(blank=True)
+    intro = RichTextField(features=[
+        'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'bold', 'italic', 'ol', 'ul', 'hr',
+        'link', 'document-link', 'image', 'embed'
+    ], blank=True)
 
     def get_context(self, request):
         # Update context to include only published posts, ordered by

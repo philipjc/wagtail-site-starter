@@ -26,27 +26,18 @@
 
 // Elements
 .container {
+  display: flex;
   padding: $main-padding;
 }
 
-section {
-  display: flex;
-  padding: $small-padding;
+.page-heading-text {
+
 }
 
-// Helpers
-.stacked {
-  display: flex;
-  flex-direction: column;
+.page-intro {
+  padding: $small-padding 0;
 }
 
-.centered {
-  align-items: center;
-  justify-content: center;
-}
+.rich-text {
 
-// Streams
-.stream-block {
-  padding: $small-padding;
 }
-

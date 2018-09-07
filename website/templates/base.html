@@ -1,4 +1,4 @@
-{% load static wagtailuserbar wagtailimages_tags %}
+{% load static wagtailuserbar wagtailimages_tags menu %}
 
 <!DOCTYPE html>
 <html class="no-js">
@@ -30,6 +30,8 @@
 
         {% wagtailuserbar %}
 
+        {% menu %}
+
         {% block header %}
 
           {% if page.page_header_image %}
@@ -57,8 +59,9 @@
 
         {% endblock %}
 
-        {% block content %}
-        {% endblock %}
+        <section class="container stacked">
+          {% block content %}{% endblock %}
+        </section>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'dist/main.js' %}"></script>

@@ -1,0 +1,34 @@
+.blog-content {
+    padding: $small-padding 0;
+
+  &__list {
+    display: flex;
+    padding: $small-padding 0;
+
+    a {
+      flex-basis: 30%;
+      text-decoration: none;
+    }
+
+    &__item {
+      background-color: #bada55;
+
+      .image {
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .blog-body {
+        padding: $small-padding;
+
+        * {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+}

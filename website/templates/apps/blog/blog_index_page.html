@@ -6,26 +6,60 @@
 
 {% block content %}
 
-  <h1>{{ page.title }}</h1>
+  <div class="page-heading-text">
+    <h1>{{ page.title }}</h1>
+  </div>
 
-  <div class="intro">{{ page.intro|richtext }}</div>
+  {% if page.specific.intro %}
+    <div class="page-intro">
+      {{ page.specific.intro|richtext }}
+    </div>
+  {% endif %}
 
-  {% for post in blogpages %}
+  <div class="blog-content">
 
-    {% with post=post.specific %}
-      <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+    <div class="blog-content__featured">
+      <p>Featured blog post</p>
+    </div>
 
-      {% with post.main_image as main_image %}
-        {% if main_image %}
-          {% image main_image fill-160x100 %}
-        {% endif %}
-      {% endwith %}
+    <div class="blog-content__list">
 
-      {{ post.intro }}
-      {{ post.body|richtext }}
+      {% for post in blogpages %}
 
-    {% endwith %}
+        {% with post=post.specific %}
 
-  {% endfor %}
+          <a href="{% pageurl post %}">
+
+            <article class="blog-content__list__item stacked">
+
+              <div class="image">
+                {% with post.main_image as main_image %}
+
+                  {% image main_image original as img %}
+
+                  {% if main_image %}
+                    <img src="{{ img.url }}" alt="image for {{ post.title }}">
+                  {% endif %}
+                {% endwith %}
+              </div>
+
+              <div class="blog-body">
+                <h4>{{ post.title }}</h4>
+
+                <p>{{ post.intro }}</p>
+
+                {{ post.body|richtext }}
+              </div>
+
+            </article>
+          </a>
+
+        {% endwith %}
+
+      {% endfor %}
+
+    </div>
+
+  </div>
 
 {% endblock %}
