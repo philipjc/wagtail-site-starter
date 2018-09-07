@@ -50,24 +50,6 @@ body {
   background: tomato;
   box-sizing: border-box; }
 
-h1 {
-  font-size: calc(14px * 6); }
-
-h2 {
-  font-size: calc(14px * 5); }
-
-h3 {
-  font-size: calc(14px * 4); }
-
-h4 {
-  font-size: calc(14px * 3); }
-
-h5 {
-  font-size: calc(14px * 2); }
-
-h6 {
-  font-size: calc(14px * 1); }
-
 .header {
   display: flex;
   padding: calc(40px / 2); }
@@ -104,6 +86,24 @@ section {
 
 .input[type='text'] {
   padding: 40px; }
+
+h1 {
+  font-size: calc(14px * 6); }
+
+h2 {
+  font-size: calc(14px * 5); }
+
+h3 {
+  font-size: calc(14px * 4); }
+
+h4 {
+  font-size: calc(14px * 3); }
+
+h5 {
+  font-size: calc(14px * 2); }
+
+h6 {
+  font-size: calc(14px * 1); }
 
 .d-generated-form {
   display: flex;
