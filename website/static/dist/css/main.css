@@ -75,6 +75,7 @@ section {
   padding: calc(40px / 2); }
 
 .stacked {
+  display: flex;
   flex-direction: column; }
 
 .centered {

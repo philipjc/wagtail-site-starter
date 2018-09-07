@@ -36,6 +36,7 @@ section {
 
 // Helpers
 .stacked {
+  display: flex;
   flex-direction: column;
 }
 
