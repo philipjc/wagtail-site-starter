@@ -45,10 +45,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+* {
+  box-sizing: border-box; }
+
 body {
   font-family: "Roboto", sans-serif;
-  background: tomato;
-  box-sizing: border-box; }
+  background: tomato; }
 
 .header {
   display: flex;
@@ -182,7 +184,8 @@ h6 {
   .blog-content__tag-list {
     display: flex; }
     .blog-content__tag-list__item {
-      border-bottom: 2px solid #bada55; }
+      padding: 5px;
+      border: 2px solid #bada55; }
 
 nav.menu {
   display: flex;

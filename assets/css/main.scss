@@ -1,11 +1,13 @@
 @import "resets";
 @import "variables";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: $font-family;
   background: tomato;
-  box-sizing: border-box;
-
 }
 
 // general
