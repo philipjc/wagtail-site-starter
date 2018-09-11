@@ -6,9 +6,7 @@
     <h3>Want to ask a question?</h3>
   </div>
 
-  <form class="enquiry__form form stacked" method="post" action="{% url 'enquiry:send' %}">
-    {#      <form class="enquiry__form" method="post" action="">#}
-
+  <form class="enquiry__form form stacked half-width" method="post" action="{% url 'enquiry:send' %}">
 
     {% csrf_token %}
 
@@ -37,7 +35,7 @@
 
     </div>
 
-    <div class="form__row">
+    <div class="form__row flex centered">
       <div class="form__row__actions">
         <button class="button light" type="submit">submit</button>
       </div>

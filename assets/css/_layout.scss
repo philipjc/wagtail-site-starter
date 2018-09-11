@@ -27,6 +27,7 @@
 // Elements
 .container {
   display: flex;
+  justify-content: space-evenly;
   padding: $default-spacing;
 }
 
