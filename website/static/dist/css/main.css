@@ -54,7 +54,7 @@ body {
 
 .header {
   display: flex;
-  padding: small-spacing; }
+  padding: calc(40px / 2); }
 
 .full-width-header {
   position: relative;
@@ -85,7 +85,10 @@ body {
     .form__row__field .input {
       width: 100%;
       padding: calc(40px / 2);
-      font-size: 18px; }
+      font-size: 18px;
+      outline: none; }
+      .form__row__field .input__textarea {
+        background-color: #ffffff; }
   .form__row__actions {
     padding: calc(40px / 2); }
 
@@ -166,7 +169,7 @@ h6 {
     box-shadow: none;
     border-radius: 0;
     background-color: #bada55;
-    padding: small-spacing;
+    padding: calc(40px / 2);
     font-size: 24px;
     cursor: pointer; }
 
@@ -218,6 +221,11 @@ h6 {
   background-color: #ff3814; }
   .enquiry__info {
     padding: 40px; }
+
+.newsletter-thanks {
+  justify-content: space-between; }
+  .newsletter-thanks * {
+    margin-bottom: 20px; }
 
 nav.menu {
   display: flex;

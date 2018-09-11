@@ -15,9 +15,14 @@
         width: 100%;
         padding: $small-spacing;
         font-size: 18px;
+        outline: none;
 
         &__text {
 
+        }
+
+        &__textarea {
+          background-color: #ffffff;
         }
       }
     }
