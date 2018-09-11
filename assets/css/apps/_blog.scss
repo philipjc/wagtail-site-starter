@@ -1,9 +1,9 @@
 .blog-content {
-  padding: $small-padding 0;
+  padding: small-spacing 0;
 
   &__list {
     display: flex;
-    padding: $small-padding 0;
+    padding: small-spacing 0;
 
     a {
       flex-basis: 30%;
@@ -22,7 +22,7 @@
       }
 
       .blog-body {
-        padding: $small-padding;
+        padding: small-spacing;
 
         * {
           margin-bottom: 10px;
@@ -33,7 +33,7 @@
 
   &__categories {
     display: flex;
-    padding: $small-padding 0;
+    padding: small-spacing 0;
 
     ul {
       display: flex;
@@ -44,30 +44,17 @@
   }
 
   &__body {
-    padding: $small-padding 0;
+    padding: small-spacing 0;
   }
 
   &__images {
-    padding: $small-padding 0;
+    padding: small-spacing 0;
     display: flex;
     justify-content: space-between;
   }
 
   &__tags {
-    padding: $small-padding 0;
-
-    a {
-      display: flex;
-      background-color: #bada55;
-      text-decoration: none;
-      width: 160px;
-      padding: 10px;
-      margin: 5px;
-      font-size: 20px;
-      cursor: pointer;
-      text-align: center;
-      min-width: 160px;
-    }
+    padding: small-spacing 0;
   }
 
   &__tag-list {

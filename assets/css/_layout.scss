@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  padding: $small-padding;
+  padding: small-spacing;
 }
 
 .full-width-header {
@@ -27,7 +27,7 @@
 // Elements
 .container {
   display: flex;
-  padding: $main-padding;
+  padding: $default-spacing;
 }
 
 .page-heading-text {
@@ -35,7 +35,7 @@
 }
 
 .page-intro {
-  padding: $small-padding 0;
+  padding: $small-spacing 0;
 }
 
 .rich-text {

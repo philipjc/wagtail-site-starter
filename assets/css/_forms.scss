@@ -1,7 +1,29 @@
-.input {
+.form {
+  width: 50%;
 
-  &[type='text'] {
-    padding: 40px;
+  &__row {
+
+    &__field {
+      padding: $small-spacing;
+      width: 100%;
+
+      .label {
+
+      }
+
+      .input {
+        width: 100%;
+        padding: $small-spacing;
+        font-size: 18px;
+
+        &__text {
+
+        }
+      }
+    }
+
+    &__actions {
+      padding: $small-spacing;
+    }
   }
 }
-

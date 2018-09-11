@@ -1,0 +1,12 @@
+.enquiry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: darken($primary-color, 10%);
+
+  &__info {
+    padding: $default-spacing;
+  }
+
+}

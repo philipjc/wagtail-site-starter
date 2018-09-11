@@ -1,0 +1,29 @@
+.button, a.button {
+
+  display: flex;
+  background-color: #bada55;
+  text-decoration: none;
+  width: 160px;
+  padding: 10px;
+  margin: 5px 0px 5px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  min-width: 160px;
+
+  &.light {
+
+  }
+
+  &.dark {
+
+  }
+
+  &.large {
+
+  }
+
+  &.small {
+
+  }
+}

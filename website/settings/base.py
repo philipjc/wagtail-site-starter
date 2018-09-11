@@ -26,12 +26,13 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.blog',
+    'apps.enquiry',
     'apps.general',
+    'apps.newsletter',
     'apps.search',
     'apps.utils',
     'apps.users',
-    'apps.enquiry',
-    'apps.blog',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
