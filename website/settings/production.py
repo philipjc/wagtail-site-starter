@@ -34,6 +34,11 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 STATIC_URL = '//%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
+# ================================================
+# Celery Production
+# ================================================
+CELERY_BROKER_URL = os.environ['REDIS_URL']
+CELERY_RESULT_BACKEND = os.environ['REDIS_URL']
 
 try:
     from .local import *
