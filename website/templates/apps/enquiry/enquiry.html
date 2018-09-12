@@ -1,0 +1,45 @@
+{% load wagtailcore_tags %}
+
+<section class="enquiry">
+
+  <div class="enquiry__info">
+    <h3>Want to ask a question?</h3>
+  </div>
+
+  <form class="enquiry__form form stacked half-width" method="post" action="{% url 'enquiry:send' %}">
+
+    {% csrf_token %}
+
+    <div class="form__row">
+
+      <div class="form__row__field">
+        <label class="label" for="name">
+          <input class="input input__text" type="text" id="enquiry_name" name="enquiry_name" placeholder="Your name">
+        </label>
+      </div>
+
+      <div class="form__row__field">
+        <label class="label" for="email">
+          <input class="input input__text" type="email" id="enquiry_email" name="enquiry_email" placeholder="Your email">
+        </label>
+      </div>
+
+    </div>
+
+    <div class="form__row">
+
+      <div class="form__row__field">
+        <textarea class="input input__textarea" name="enquiry_text" id="enquiry_text" cols="30" rows="10"
+                placeholder="What's your question?"></textarea>
+      </div>
+
+    </div>
+
+    <div class="form__row flex centered">
+      <div class="form__row__actions">
+        <button class="button light" type="submit">submit</button>
+      </div>
+    </div>
+  </form>
+
+</section>

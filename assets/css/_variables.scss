@@ -1,4 +1,4 @@
-$font-size: 14px;
+$font-size: 12px;
 $font-family: 'Roboto', sans-serif;
 
 // Colors
@@ -12,8 +12,7 @@ $light-secondary: lighten($secondary-color, 15%);
 $dark-secondary: darken($secondary-color, 15%);
 
 // Spacing
-$main-margin: 20px;
-$main-padding: 40px;
+$default-spacing: 40px;
 
-$small-margin: calc(#{$main-margin} / 2);
-$small-padding: calc(#{$main-padding} / 2);
+$small-spacing: calc(#{$default-spacing} / 2);
+$large-spacing: calc(#{$default-spacing} * 2);

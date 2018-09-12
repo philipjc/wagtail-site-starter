@@ -26,6 +26,8 @@ urlpatterns = [
 
     url(r'^enquiry/', include('apps.enquiry.urls'), name='enquiry'),
 
+    url(r'^newsletter/', include('apps.newsletter.urls'), name='newsletter'),
+
     path('users/', include('apps.users.urls')),
 
     path('users/', include('django.contrib.auth.urls')),

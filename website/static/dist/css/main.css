@@ -71,41 +71,78 @@ body {
 
 .container {
   display: flex;
+  justify-content: space-evenly;
   padding: 40px; }
 
 .page-intro {
   padding: calc(40px / 2) 0; }
 
-.input[type='text'] {
-  padding: 40px; }
+.form {
+  width: 50%; }
+  .form__row__field {
+    padding: calc(40px / 2);
+    width: 100%; }
+    .form__row__field .input {
+      width: 100%;
+      padding: calc(40px / 2);
+      font-size: 18px;
+      outline: none; }
+      .form__row__field .input__textarea {
+        background-color: #ffffff; }
+  .form__row__actions {
+    padding: calc(40px / 2); }
 
 h1 {
-  font-size: calc(14px * 6); }
+  font-size: calc(12px * 6); }
 
 h2 {
-  font-size: calc(14px * 5); }
+  font-size: calc(12px * 5); }
 
 h3 {
-  font-size: calc(14px * 4); }
+  font-size: calc(12px * 4); }
 
 h4 {
-  font-size: calc(14px * 3); }
+  font-size: calc(12px * 3); }
 
 h5 {
-  font-size: calc(14px * 2); }
+  font-size: calc(12px * 2); }
 
 h6 {
-  font-size: calc(14px * 1); }
+  font-size: calc(12px * 1); }
+
+.flex {
+  display: flex; }
 
 .stacked {
   flex-direction: column; }
+
+.inline {
+  flex-direction: row; }
 
 .centered {
   align-items: center;
   justify-content: center; }
 
+.full-width {
+  width: 100%; }
+
+.half-width {
+  width: 50%; }
+
 .stream-block {
   padding: calc(40px / 2); }
+
+.button, a.button {
+  display: flex;
+  background-color: #bada55;
+  text-decoration: none;
+  width: 160px;
+  padding: 10px;
+  margin: 5px 0px 5px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  min-width: 160px; }
 
 .d-generated-form {
   display: flex;
@@ -170,22 +207,25 @@ h6 {
     justify-content: space-between; }
   .blog-content__tags {
     padding: calc(40px / 2) 0; }
-    .blog-content__tags a {
-      display: flex;
-      background-color: #bada55;
-      text-decoration: none;
-      width: 160px;
-      padding: 10px;
-      margin: 5px;
-      font-size: 20px;
-      cursor: pointer;
-      text-align: center;
-      min-width: 160px; }
   .blog-content__tag-list {
     display: flex; }
     .blog-content__tag-list__item {
       padding: 5px;
       border: 2px solid #bada55; }
+
+.enquiry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff3814; }
+  .enquiry__info {
+    padding: 40px; }
+
+.newsletter-thanks {
+  justify-content: space-between; }
+  .newsletter-thanks * {
+    margin-bottom: 20px; }
 
 nav.menu {
   display: flex;

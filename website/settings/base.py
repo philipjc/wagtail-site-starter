@@ -26,12 +26,13 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.blog',
+    'apps.enquiry',
     'apps.general',
+    'apps.newsletter',
     'apps.search',
     'apps.utils',
     'apps.users',
-    'apps.enquiry',
-    'apps.blog',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -54,6 +55,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_celery_beat',
+    'django_celery_results',
 
 ]
 
@@ -173,6 +176,7 @@ WAGTAIL_SITE_NAME = "website"
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
 
+
 # ================================================
 # Auth
 # ================================================
@@ -182,15 +186,27 @@ AUTH_PROFILE_MODULE = 'users.Profile'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+
 # ================================================
 # SendGrid
 # ================================================
-
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = config('SENDGRID_EMAIL_HOST')
 EMAIL_HOST_PASSWORD = config('SENDGRID_PASSWORD')
 EMAIL_USE_TLS = True
+
+
+# ================================================
+# Celery
+# ================================================
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE
+
 
 # ================================================
 # Other Variables

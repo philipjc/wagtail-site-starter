@@ -20,7 +20,7 @@ def send_enquiry(request):
         sg = sendgrid.SendGridAPIClient(apikey=config('SENDGRID_API_KEY'))
         from_email = Email(form_email)
         to_email = Email("filystyle@gmail.com")
-        subject = "Enquiry from Drishti website"
+        subject = "Enquiry from Site Boilerplate"
         email_content = Content("text/plain", "Hello, " + name + " has an enquiry. \n" + text +
                                 "\n My contact email is: " + str(from_email))
 

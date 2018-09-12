@@ -1,6 +1,14 @@
 // Helpers
+.flex {
+  display: flex;
+}
+
 .stacked {
   flex-direction: column;
+}
+
+.inline {
+  flex-direction: row;
 }
 
 .centered {
@@ -8,7 +16,15 @@
   justify-content: center;
 }
 
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
 // Streams
 .stream-block {
-  padding: $small-padding;
+  padding: $small-spacing;
 }

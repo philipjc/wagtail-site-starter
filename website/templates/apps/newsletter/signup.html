@@ -1,0 +1,31 @@
+{% load wagtailcore_tags %}
+
+<section class="container stacked newsletter">
+
+  <div class="newsletter__info flex centered">
+    <h4>Subscribe to our Newsletter</h4>
+  </div>
+
+  <form class="newsletter__form form full-width" method="post" action="{% url 'newsletter:signup' %}">
+
+    {% csrf_token %}
+
+    <div class="form__row flex inline">
+
+      <div class="form__row__field">
+        <label class="label" for="email">
+          <input class="input input__text" type="email" id="newsletter_email" name="newsletter_email" placeholder="Your email">
+        </label>
+      </div>
+
+    </div>
+
+    <div class="form__row flex centered">
+      <div class="form__row__actions">
+        <button class="button light" type="submit">submit</button>
+      </div>
+    </div>
+
+  </form>
+
+</section>

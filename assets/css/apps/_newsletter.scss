@@ -1,0 +1,14 @@
+.newsletter {
+
+  &__form {
+
+  }
+
+  &-thanks {
+    justify-content: space-between;
+
+    * {
+      margin-bottom: 20px;
+    }
+  }
+}
