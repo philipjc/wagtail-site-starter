@@ -12,6 +12,9 @@ class CustomUserCreationForm(UserCreationForm):
         fields = ('username', 'email',)
 
 
+# ========================================
+#
+# ========================================
 class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
@@ -19,6 +22,9 @@ class CustomUserChangeForm(UserChangeForm):
         fields = UserChangeForm.Meta.fields
 
 
+# ========================================
+#
+# ========================================
 class UpdateProfileForm(forms.ModelForm):
 
     class Meta:
