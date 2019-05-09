@@ -1,7 +1,7 @@
 # users/forms.py
 from django import forms
 from django.db import models
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm, PasswordResetForm
 from .models import CustomUser, Profile
 
 

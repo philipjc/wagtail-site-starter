@@ -4,7 +4,8 @@ from django import template
 from django.shortcuts import redirect, render
 from django.http import request
 
-from .forms import CustomUserCreationForm, UpdateProfileForm
+from django.contrib.auth import views as auth_views
+from .forms import CustomUserCreationForm, UpdateProfileForm, PasswordResetForm, PasswordChangeForm
 from .models import CustomUser, Profile
 
 
@@ -26,6 +27,26 @@ class LogIn(generic.CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'login.html'
+
+
+# ========================================
+#
+# ========================================
+class PasswordChange(auth_views.PasswordChangeView):
+
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('password_reset_done')
+    template_name = 'password_change.html'
+
+
+# ========================================
+#
+# ========================================
+class PasswordChangeDone(auth_views.PasswordChangeDoneView):
+
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('password_change_done')
+    template_name = 'password_change_done.html'
 
 
 # ========================================

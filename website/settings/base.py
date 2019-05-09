@@ -107,8 +107,10 @@ WSGI_APPLICATION = 'website.wsgi.application'
 #     }
 # }
 
+DATABASE_NAME = 'new_site'
+
 # default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'django.db.backends.postgresql_psycopg2')
-default_dburl = 'postgres://localhost/site'
+default_dburl = 'postgres://localhost/' + DATABASE_NAME
 
 DATABASES = {'default': config('DATABASE_URL', default=default_dburl, cast=dburl)}
 
