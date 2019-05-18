@@ -13,7 +13,7 @@ urlpatterns = [
         template_name='users/login_home.html'),
         name='users'),
 
-    url(r'^login', auth_views.login, name='login'),
+    url(r'^login', auth_views.LoginView.as_view, name='login'),
 
     url(r'^signup', views.SignUp.as_view(), name='signup'),
 
@@ -23,10 +23,10 @@ urlpatterns = [
 
     url(r'^(?P<pk>\d+)/profile/edit', views.UpdateProfile.as_view(), name='profile_edit'),
 
-    url(r'^password/reset/$', auth_views.password_reset,
+    url(r'^password/reset/$', auth_views.PasswordResetView.as_view,
         {'template_name': 'password_reset.html'}, name="password_reset"),
 
-    url(r'^password/reset/done/$', auth_views.password_reset_done,
+    url(r'^password/reset/done/$', auth_views.PasswordResetDoneView.as_view,
         {'template_name': 'password_reset_done.html'}, name="password_reset_done"),
 
     url(r'^password/change/$', auth_views.PasswordChangeView.as_view(),
