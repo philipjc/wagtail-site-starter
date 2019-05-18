@@ -7,19 +7,19 @@ Django==2.2.1
 
 celery==4.2.1
 redis==2.10.6
-django-modelcluster==4.1
+django-modelcluster==4.4
 django-storages==1.6.6
-django-taggit==0.22.2
+django-taggit==0.24.0
 django-treebeard==4.3
 django-celery-beat==1.1.1
 django-celery-results==1.0.1
 
 djangorestframework==3.8.2
-draftjs-exporter==2.1.1
+draftjs_exporter==2.1.5
 html5lib==1.0.1
 idna==2.6
 l18n==2016.6.4
-Pillow==5.1.0
+Pillow==5.4.1
 psycopg2-binary==2.7.5
 python-dateutil==2.7.3
 python-decouple==3.1
